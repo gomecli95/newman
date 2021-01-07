@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "8194de7a-c081-49ac-ba53-23d27fc66b45",
+		"name": "Day1_Spartan Copy",
+		"description": "This is the collection I used for Day 1 class ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"// if some condition is true ",
+							" //postman.setNextRequest(\"BLA BLA VOILA B20\");",
+							"// postman.setNextRequest(null);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/hello",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Spartan",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 1 Spartan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/search?nameContains=ea&gender=Male",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"search"
+					],
+					"query": [
+						{
+							"key": "nameContains",
+							"value": "ea"
+						},
+						{
+							"key": "gender",
+							"value": "Male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 1 Spartan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/55",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Spartan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/search?gender=Male",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"search"
+					],
+					"query": [
+						{
+							"key": "nameContains",
+							"value": "ea",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "Male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add 1 Spartan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"ABC\",\n   \"gender\": \"Female\",\n   \"phone\": 1000000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BLA BLA VOILA B20",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gender\":\"Male\",\n    \"name\":\"Tuckyyy\",\n    \"phone\":1231231230\n}"
+				},
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/34",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update 1 Data Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gender\":\"Male\"\n}"
+				},
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/34",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch 1 Spartan",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"B20 Tucky\"}"
+				},
+				"url": {
+					"raw": "http://52.201.187.226:8000/api/spartans/34",
+					"protocol": "http",
+					"host": [
+						"52",
+						"201",
+						"187",
+						"226"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"spartans",
+						"34"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
